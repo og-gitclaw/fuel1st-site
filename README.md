@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# fuel1st-site
 
-## Getting Started
+Marketing website for Fuel1st (Global Aviation Fuel Solutions). Built with Next.js 14 (App Router), TypeScript, and Tailwind. Deployed to Vercel.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — local dev server
+- `npm run build` — production build
+- `npm run lint` — ESLint
+- `npm run typecheck` — TypeScript no-emit check
+- `npm start` — run production build locally
 
-## Learn More
+## Environment
 
-To learn more about Next.js, take a look at the following resources:
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical site origin used for OG tags, sitemap, JSON-LD |
+| `NEXT_PUBLIC_ALLOW_INDEXING` | Set to `true` to remove `noindex` and serve a real `robots.txt` |
+| `REVALIDATE_TOKEN` | Shared secret for `POST /api/revalidate-news` to manually refresh the news feed |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+By default the site emits `<meta name="robots" content="noindex,nofollow">` and a disallow-all `robots.txt`. This is intentional during pre-launch — flip `NEXT_PUBLIC_ALLOW_INDEXING=true` in Vercel project settings when ready to go live.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Architecture
 
-## Deploy on Vercel
+- `app/` — App Router pages
+- `components/` — UI components (Nav, Footer, NewsCard, etc.)
+- `lib/` — site metadata, services, leadership, FAQ, blog posts, RSS aggregator
+- `app/api/revalidate-news/` — manual revalidation endpoint for the news feed
+- `app/sitemap.ts`, `app/robots.ts`, `app/opengraph-image.tsx` — SEO surfaces
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## News feed
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`/news` aggregates four public RSS sources (Aviation Week, FlightGlobal, Simple Flying, AIN), filters out items that mention competitors, categorizes by keyword, and renders a card grid with a category filter that persists in `localStorage`. The page uses ISR with a 24-hour revalidate window. Manual revalidation:
+
+```bash
+curl -X POST -H "x-revalidate-token: <REVALIDATE_TOKEN>" \
+  https://<your-domain>/api/revalidate-news
+```
+
+## Open TODOs
+
+Search the codebase for `TODO:` to find every placeholder. Highlights:
+
+- Leadership bios are placeholders
+- Press kit is missing the full logo pack and one-pager
+- Legal pages (Privacy, Terms, Cookies) are unreviewed boilerplate
+- One blog post is a placeholder; real editorial content TBD
+
+## License
+
+MIT — see [LICENSE](./LICENSE).

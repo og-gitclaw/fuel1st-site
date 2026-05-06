@@ -2,26 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    @apply text-ink;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  body {
+    @apply bg-surface text-ink-soft font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-ink font-semibold tracking-tight;
+  }
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl leading-[1.05]; }
+  h2 { @apply text-3xl md:text-4xl leading-tight; }
+  h3 { @apply text-xl md:text-2xl; }
+  a { @apply transition-colors; }
+  ::selection { @apply bg-brand text-white; }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-4 md:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white hover:bg-brand-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .btn-outline {
+    @apply btn border border-brand text-brand hover:bg-brand hover:text-white;
+  }
+  .btn-ghost {
+    @apply btn text-ink hover:text-brand;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-brand;
+  }
+  .section {
+    @apply py-16 md:py-24;
+  }
+  .prose-fuel {
+    @apply max-w-prose text-ink-soft leading-relaxed;
+  }
+  .prose-fuel p { @apply mb-4; }
+  .prose-fuel a { @apply text-brand underline underline-offset-2 hover:text-brand-600; }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
 }
