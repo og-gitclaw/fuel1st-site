@@ -165,22 +165,34 @@ function LocationsStrip() {
             See our office <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-surface-cream p-6">
+        <div className="rounded-2xl border border-slate-200 bg-surface-cream p-8">
           <p className="text-xs font-semibold uppercase tracking-wider text-brand">Headquarters</p>
-          <p className="mt-2 text-lg font-semibold text-ink">Lauderdale by the Sea, Florida</p>
-          <p className="mt-3 text-sm text-ink-soft">{formattedAddress}</p>
-          <p className="mt-2 text-sm text-ink-soft">
-            <a href={`tel:${site.contact.phoneTel}`} className="hover:text-brand">{site.contact.phone}</a>
-            {" · "}
-            <a href={`mailto:${site.contact.email}`} className="hover:text-brand">{site.contact.email}</a>
-          </p>
-          <iframe
-            title="Map of Fuel1st headquarters"
-            src={`https://www.google.com/maps?q=${encodeURIComponent(formattedAddress)}&output=embed`}
-            className="mt-4 h-72 w-full rounded-lg border border-slate-200"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          <p className="mt-2 text-2xl font-semibold text-ink">Lauderdale by the Sea, Florida</p>
+          <dl className="mt-6 space-y-3 text-sm">
+            <div>
+              <dt className="text-ink-muted">Address</dt>
+              <dd className="mt-0.5 text-ink">{formattedAddress}</dd>
+            </div>
+            <div>
+              <dt className="text-ink-muted">Phone</dt>
+              <dd className="mt-0.5 text-ink">
+                <a href={`tel:${site.contact.phoneTel}`} className="hover:text-brand">{site.contact.phone}</a>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-ink-muted">Email</dt>
+              <dd className="mt-0.5 text-ink">
+                <a href={`mailto:${site.contact.email}`} className="hover:text-brand">{site.contact.email}</a>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-ink-muted">Hours</dt>
+              <dd className="mt-0.5 text-ink">Dispatch staffed 24/7, 365 days a year</dd>
+            </div>
+          </dl>
+          <Link href="/locations" className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-brand">
+            View office on map <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
