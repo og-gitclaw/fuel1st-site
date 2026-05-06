@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
+import { photos } from "@/lib/photos";
 import { Leaf, BarChart3, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function SustainabilityPage() {
         eyebrow="Sustainability"
         title="Lower-carbon fuel. Honest accounting. Reporting that holds up."
         description="Sustainable Aviation Fuel reduces life-cycle CO₂ versus conventional jet fuel. Where it's physically available, we deliver it. Where it isn't, we offer book-and-claim and offset programs as a credible bridge."
+        photo={photos.skyJet}
       />
 
       <section className="section">

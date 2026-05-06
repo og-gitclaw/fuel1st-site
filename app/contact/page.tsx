@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { site, formattedAddress } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Tell us about the trip."
         description="The dispatch desk is staffed around the clock. Email or call for a quote — sending the route and tail number ahead speeds the response."
+        photo={photos.runwaySunrise}
       />
       <section className="section">
         <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.4fr]">

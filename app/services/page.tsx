@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { services } from "@/lib/services";
+import { photos } from "@/lib/photos";
 import { CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function ServicesPage() {
         eyebrow="Services"
         title="Everything an operator needs to leave on time."
         description="From the contract for jet fuel to the FBO confirmation at the destination, our services are designed to behave like one program — even when the route involves a dozen suppliers and four time zones."
+        photo={photos.rampDusk}
       />
 
       <section className="section">

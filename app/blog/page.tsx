@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { blogPosts } from "@/lib/blog";
+import { photos } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -15,6 +16,7 @@ export default function BlogPage() {
         eyebrow="Insights"
         title="Notes from the dispatch desk."
         description="Practical writing on aviation fuel markets, trip support craft, and operating decisions."
+        photo={photos.engineDetail}
       />
       <section className="section">
         <div className="container-page grid gap-6 md:grid-cols-2 lg:grid-cols-3">

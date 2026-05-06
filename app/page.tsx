@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Globe2, Clock, Plane, Leaf } from "lucide-react";
 import { services } from "@/lib/services";
@@ -5,6 +6,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { NewsCard } from "@/components/NewsCard";
 import { fetchAggregatedNews } from "@/lib/rss";
 import { site, formattedAddress } from "@/lib/site";
+import { photos } from "@/lib/photos";
 
 export const revalidate = 86400;
 
@@ -31,58 +33,63 @@ export default async function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-surface-cream">
+    <section className="relative isolate overflow-hidden">
+      <Image
+        src={photos.heroCloudsJet.src}
+        alt={photos.heroCloudsJet.alt}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-40 [background:radial-gradient(circle_at_15%_20%,rgba(96,0,205,0.18),transparent_55%),radial-gradient(circle_at_85%_60%,rgba(96,0,205,0.10),transparent_60%)]"
+        className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-ink/30"
       />
-      <div className="container-page relative grid items-center gap-12 py-20 md:py-28 lg:grid-cols-[1.15fr_1fr]">
-        <div>
-          <p className="eyebrow">{site.tagline}</p>
-          <h1 className="mt-4 text-balance">
-            Aviation fuel and trip support, on call <span className="text-brand">24/7</span>.
+      <div className="container-page relative grid items-center gap-12 py-24 text-white md:py-32 lg:py-40">
+        <div className="max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-200">
+            {site.tagline}
+          </p>
+          <h1 className="mt-4 text-balance text-white">
+            Aviation fuel and trip support, on call{" "}
+            <span className="text-brand-200">24/7</span>.
           </h1>
-          <p className="mt-6 max-w-xl text-pretty text-lg text-ink-soft">
+          <p className="mt-6 max-w-xl text-pretty text-lg text-white/85">
             From Lauderdale by the Sea, {site.name} coordinates jet fuel, dispatch, and ground support for operators flying to {site.airportsCount} airports worldwide. One contract, one invoice, one team accountable for the trip.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/contact" className="btn-primary">
               Get a quote <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/services" className="btn-outline">
+            <Link
+              href="/services"
+              className="btn inline-flex items-center justify-center gap-2 rounded-md border border-white/40 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur-sm hover:bg-white/15"
+            >
               See what we do
             </Link>
           </div>
-          <dl className="mt-12 grid max-w-xl grid-cols-3 gap-6 border-t border-slate-200 pt-8 text-sm">
-            <div>
-              <dt className="text-ink-muted">Airports</dt>
-              <dd className="mt-1 text-2xl font-semibold text-ink">{site.airportsCount}</dd>
-            </div>
-            <div>
-              <dt className="text-ink-muted">Coverage</dt>
-              <dd className="mt-1 text-2xl font-semibold text-ink">{site.countriesCount}</dd>
-            </div>
-            <div>
-              <dt className="text-ink-muted">Dispatch</dt>
-              <dd className="mt-1 text-2xl font-semibold text-ink">{site.hoursCount}</dd>
-            </div>
-          </dl>
         </div>
-        <div aria-hidden className="relative hidden lg:block">
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand to-brand-700" />
-          <div className="relative aspect-[4/5] rounded-2xl border border-brand-200 bg-white/70 p-8 backdrop-blur-sm">
-            <Plane className="h-10 w-10 text-brand" />
-            <p className="mt-6 text-2xl font-semibold leading-snug text-ink">
-              &ldquo;The dispatch desk took an unexpected slot change at 02:00 local and rerouted the turn before our crew was on the ramp.&rdquo;
-            </p>
-            <p className="mt-4 text-sm text-ink-muted">
-              {/* TODO: replace with a real client testimonial */}
-              Operations Manager, mid-size charter operator
-            </p>
-          </div>
+      </div>
+      <div className="relative border-t border-white/15 bg-ink/40 backdrop-blur-sm">
+        <div className="container-page">
+          <dl className="grid grid-cols-3 gap-6 py-8 text-white">
+            <Stat label="Airports" value={site.airportsCount} />
+            <Stat label="Coverage" value={site.countriesCount} />
+            <Stat label="Dispatch" value={site.hoursCount} />
+          </dl>
         </div>
       </div>
     </section>
+  );
+}
+
+function Stat({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <dt className="text-xs font-semibold uppercase tracking-wider text-white/60">{label}</dt>
+      <dd className="mt-1 text-2xl font-semibold text-white md:text-3xl">{value}</dd>
+    </div>
   );
 }
 
@@ -164,6 +171,15 @@ function LocationsStrip() {
           <Link href="/locations" className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-brand">
             See our office <ArrowRight className="h-4 w-4" />
           </Link>
+          <div className="relative mt-8 hidden aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 lg:block">
+            <Image
+              src={photos.runwayAerial.src}
+              alt={photos.runwayAerial.alt}
+              fill
+              sizes="(min-width: 1024px) 540px, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-surface-cream p-8">
           <p className="text-xs font-semibold uppercase tracking-wider text-brand">Headquarters</p>
@@ -232,17 +248,30 @@ function SustainabilityCallout() {
   return (
     <section className="section">
       <div className="container-page">
-        <div className="rounded-2xl bg-gradient-to-br from-brand to-brand-700 p-10 text-white md:p-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-100">Sustainability</p>
-          <h2 className="mt-3 max-w-2xl text-white text-balance">
-            Lower-carbon fuel where it&rsquo;s physically available — and a credible bridge where it isn&rsquo;t.
-          </h2>
-          <p className="mt-4 max-w-2xl text-pretty text-brand-100/90">
-            Our SAF program supplies sustainable aviation fuel at participating airports, with book-and-claim and carbon-offset arrangements covering the gaps. The reporting we generate is built to stand up to scrutiny in a corporate sustainability disclosure.
-          </p>
-          <Link href="/sustainability" className="mt-8 inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-medium text-brand hover:bg-brand-50">
-            Read more <ArrowRight className="h-4 w-4" />
-          </Link>
+        <div className="relative isolate overflow-hidden rounded-2xl">
+          <Image
+            src={photos.skyJet.src}
+            alt={photos.skyJet.alt}
+            fill
+            sizes="(min-width: 1024px) 1200px, 100vw"
+            className="object-cover"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-br from-brand/95 via-brand-700/85 to-ink/80"
+          />
+          <div className="relative p-10 text-white md:p-14">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-100">Sustainability</p>
+            <h2 className="mt-3 max-w-2xl text-balance text-white">
+              Lower-carbon fuel where it&rsquo;s physically available — and a credible bridge where it isn&rsquo;t.
+            </h2>
+            <p className="mt-4 max-w-2xl text-pretty text-white/90">
+              Our SAF program supplies sustainable aviation fuel at participating airports, with book-and-claim and carbon-offset arrangements covering the gaps. The reporting we generate is built to stand up to scrutiny in a corporate sustainability disclosure.
+            </p>
+            <Link href="/sustainability" className="mt-8 inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-medium text-brand hover:bg-brand-50">
+              Read more <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

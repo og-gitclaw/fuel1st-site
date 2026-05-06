@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { leadership } from "@/lib/leadership";
+import { photos } from "@/lib/photos";
 import { UserCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function LeadershipPage() {
         eyebrow="Leadership"
         title="The team behind the dispatch desk."
         description="Our leaders combine experience in aviation fuel logistics, FBO operations, and global trip support."
+        photo={photos.boardingSunset}
       />
       <section className="section">
         <div className="container-page grid gap-8 md:grid-cols-2 lg:grid-cols-2">

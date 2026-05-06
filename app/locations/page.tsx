@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { site, formattedAddress } from "@/lib/site";
+import { photos } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Locations",
@@ -15,6 +16,7 @@ export default function LocationsPage() {
         eyebrow="Locations"
         title="One office, global reach."
         description={`Our headquarters in Lauderdale by the Sea coordinates fuel and trip support for operators flying to ${site.airportsCount} airports worldwide.`}
+        photo={photos.runwayAerial}
       />
 
       <section className="section">

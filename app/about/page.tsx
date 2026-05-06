@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "About",
@@ -15,6 +16,7 @@ export default function AboutPage() {
         eyebrow="About"
         title="We move fuel and trips, not paperwork."
         description={`Founded in ${site.founded} in South Florida, ${site.name} specializes in the downstream marketing of aviation fuel — buying from the world’s largest producers and delivering it to operators at more than ${site.airportsCount} airports.`}
+        photo={photos.jetHeadOn}
       />
 
       <section className="section">
