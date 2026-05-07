@@ -12,8 +12,8 @@ export type Photo = {
 export const photos = {
   heroCloudsJet: {
     src: "/images/hero-clouds-jet.jpg",
-    alt: "Commercial passenger jet in flight against a bright blue sky with scattered white clouds.",
-    pexelsId: "13356357",
+    alt: "Large commercial jet flying high amid fluffy white clouds and a clear blue sky.",
+    pexelsId: "36886567",
   },
   jetHeadOn: {
     src: "/images/jet-headon.jpg",
