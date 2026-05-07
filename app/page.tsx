@@ -43,16 +43,16 @@ function Hero() {
         sizes="100vw"
         className="object-cover"
       />
-      <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-ink/85 via-ink/40 to-ink/10" />
-      <div className="container-page relative py-24 text-white sm:py-28 md:py-36 lg:py-44">
-        <div className="max-w-2xl">
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-ink/5 md:via-ink/35 md:to-transparent" />
+      <div className="container-page relative grid items-center py-24 text-white sm:py-28 md:py-36 lg:py-44 lg:grid-cols-2 lg:gap-8">
+        <div className="max-w-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-200">
             Global aviation fuel solutions
           </p>
           <h1 className="mt-4 text-balance text-white">
             Aviation fuel and trip support, on call <span className="text-brand-200">24/7</span>.
           </h1>
-          <p className="mt-5 max-w-xl text-pretty text-lg text-white/85">
+          <p className="mt-5 max-w-lg text-pretty text-lg text-white/85">
             One contract, one invoice, one dispatch team — across {site.airportsCount} airports.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -67,6 +67,8 @@ function Hero() {
             </Link>
           </div>
         </div>
+        {/* Empty right column on desktop — lets the plane breathe */}
+        <div aria-hidden className="hidden lg:block" />
       </div>
       <div className="relative border-t border-white/15 bg-ink/45 backdrop-blur-sm">
         <div className="container-page">
