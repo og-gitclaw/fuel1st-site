@@ -24,9 +24,9 @@ export function PageHeader({ eyebrow, title, description, photo, className }: Pa
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-ink/30"
+          className="absolute inset-0 bg-gradient-to-br from-ink/85 via-ink/45 to-ink/15"
         />
-        <div className="container-page relative py-20 text-white md:py-28">
+        <div className="container-page relative py-16 text-white sm:py-20 md:py-28">
           {eyebrow ? (
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-200">
               {eyebrow}

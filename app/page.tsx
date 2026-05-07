@@ -43,8 +43,8 @@ function Hero() {
         sizes="100vw"
         className="object-cover"
       />
-      <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/20" />
-      <div className="container-page relative py-28 text-white md:py-36 lg:py-44">
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-ink/85 via-ink/40 to-ink/10" />
+      <div className="container-page relative py-24 text-white sm:py-28 md:py-36 lg:py-44">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-200">
             Global aviation fuel solutions
