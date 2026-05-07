@@ -48,6 +48,27 @@
   }
   .prose-fuel p { @apply mb-4; }
   .prose-fuel a { @apply text-brand underline underline-offset-2 hover:text-brand-600; }
+
+  /* Effect 1 — card lift on hover (desktop primarily). Subtle 4px rise + soft brand-purple ambient shadow. */
+  .card-lift {
+    transition-property: transform, box-shadow, border-color;
+    transition-duration: 220ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px -12px rgba(96, 0, 205, 0.22);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-lift {
+      transition: border-color 150ms ease;
+    }
+    .card-lift:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
 }
 
 @layer utilities {

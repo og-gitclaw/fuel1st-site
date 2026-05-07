@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export function ServiceCard({ service, href }: { service: Service; href?: string }) {
   const Icon = service.icon;
   return (
-    <article className="group flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 transition hover:border-brand-200 hover:shadow-sm">
+    <article className="card-lift group flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 hover:border-brand-200">
       <Icon className="h-8 w-8 text-brand" aria-hidden="true" />
       <h3 className="mt-4">{service.name}</h3>
       <p className="mt-2 flex-1 text-sm text-ink-soft">{service.short}</p>
