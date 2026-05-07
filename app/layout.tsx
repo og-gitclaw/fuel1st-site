@@ -38,10 +38,8 @@ export const metadata: Metadata = {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
   },
-  icons: {
-    icon: "/favicon.svg",
-    apple: "/apple-touch-icon.png",
-  },
+  // Favicon and apple-touch icons are picked up automatically by Next.js
+  // from app/icon.png and app/apple-icon.png.
 };
 
 export const viewport: Viewport = {
