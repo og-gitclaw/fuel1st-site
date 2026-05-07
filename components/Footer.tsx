@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
 import { footerNav } from "@/lib/nav";
 import { site, formattedAddress } from "@/lib/site";
 
@@ -16,7 +15,7 @@ export function Footer() {
       <div className="container-page py-12">
         <div className="grid gap-10 lg:grid-cols-[1.5fr_repeat(4,1fr)]">
           <div>
-            <Logo className="h-8 w-auto" />
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">{site.name}</p>
             <p className="mt-4 max-w-xs text-sm text-ink-soft">{site.description}</p>
             <div className="mt-6 space-y-1 text-sm text-ink-soft">
               <p>{formattedAddress}</p>
