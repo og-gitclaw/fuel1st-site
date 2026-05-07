@@ -58,14 +58,6 @@ const orgJsonLd = {
   foundingDate: site.founded,
   email: site.contact.email,
   telephone: site.contact.phone,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.contact.address.street,
-    addressLocality: site.contact.address.city,
-    addressRegion: site.contact.address.region,
-    postalCode: site.contact.address.postal,
-    addressCountry: site.contact.address.country,
-  },
 };
 
 const websiteJsonLd = {

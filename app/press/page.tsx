@@ -22,7 +22,7 @@ export default function PressPage() {
               <h2>Boilerplate</h2>
               <p className="prose-fuel mt-3">{site.description}</p>
               <p className="prose-fuel">
-                Founded in {site.founded} and headquartered in South Florida, the company specializes in the downstream marketing of aviation fuel and runs a 24/7 dispatch operation supporting general aviation, commercial, and military customers.
+                Founded in {site.founded}, the company specializes in the downstream marketing of aviation fuel and runs a 24/7 dispatch operation supporting general aviation, commercial, and military customers.
               </p>
             </div>
             <div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { footerNav } from "@/lib/nav";
-import { site, formattedAddress } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export function Footer() {
   const groups = [
@@ -18,7 +18,6 @@ export function Footer() {
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">{site.name}</p>
             <p className="mt-4 max-w-xs text-sm text-ink-soft">{site.description}</p>
             <div className="mt-6 space-y-1 text-sm text-ink-soft">
-              <p>{formattedAddress}</p>
               <p>
                 <a href={`tel:${site.contact.phoneTel}`} className="hover:text-brand">
                   {site.contact.phone}

@@ -25,7 +25,6 @@ export default async function HomePage() {
       <SecondaryBand />
       <ServicesOverview />
       <SustainabilityBand />
-      <LocationsBand />
       <NewsStrip items={news} />
       <ContactCTA />
     </>
@@ -199,37 +198,6 @@ function SustainabilityBand() {
           >
             See the SAF program <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function LocationsBand() {
-  return (
-    <section className="py-20 md:py-24">
-      <div className="container-page grid gap-10 lg:grid-cols-2">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-          <Image
-            src={photos.runwayAerial.src}
-            alt={photos.runwayAerial.alt}
-            fill
-            sizes="(min-width: 1024px) 580px, 100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="self-center">
-          <p className="eyebrow">Where we are</p>
-          <h2 className="mt-2 text-balance">Florida headquarters. Global reach.</h2>
-          <p className="prose-fuel mt-4">
-            Dispatch is staffed 24/7. Trip support, slots, permits, and ramp coordination — handled in your time zone, not ours.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/locations" className="btn-primary">
-              Visit our office <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link href="/contact" className="btn-outline">Talk to dispatch</Link>
-          </div>
         </div>
       </div>
     </section>

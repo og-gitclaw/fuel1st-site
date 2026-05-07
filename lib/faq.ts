@@ -3,7 +3,7 @@ export type FAQ = { q: string; a: string };
 export const faqs: FAQ[] = [
   {
     q: "Where does Fuel1st operate?",
-    a: "Our network covers more than 1,800 airports worldwide, with dispatch coordinated from our South Florida headquarters.",
+    a: "Our network covers more than 1,800 airports worldwide, with dispatch coordinated by a single 24/7 desk.",
   },
   {
     q: "Who do you serve?",

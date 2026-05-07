@@ -4,7 +4,6 @@ export const primaryNav: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Sustainability", href: "/sustainability" },
-  { label: "Locations", href: "/locations" },
   { label: "Leadership", href: "/leadership" },
   { label: "News", href: "/news" },
   { label: "Insights", href: "/blog" },
@@ -16,7 +15,6 @@ export const footerNav = {
   company: [
     { label: "About", href: "/about" },
     { label: "Leadership", href: "/leadership" },
-    { label: "Locations", href: "/locations" },
     { label: "Press", href: "/press" },
   ],
   services: [

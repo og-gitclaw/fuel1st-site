@@ -19,7 +19,7 @@ export default function PrivacyPage() {
 
           <h2 className="mt-6">1. Who we are</h2>
           <p>
-            {site.legalName} (&ldquo;{site.name}&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) operates this website at {site.url}. Our business address is on the contact page.
+            {site.legalName} (&ldquo;{site.name}&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) operates this website at {site.url}.
           </p>
 
           <h2>2. Information we collect</h2>

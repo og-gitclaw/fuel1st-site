@@ -47,11 +47,11 @@ export default async function OpengraphImage() {
             {site.tagline}
           </div>
           <div style={{ marginTop: 28, fontSize: 28, opacity: 0.85, maxWidth: 900 }}>
-            Florida-based provider of aviation fuel and trip support to {site.airportsCount} airports worldwide.
+            Aviation fuel and trip support, on call {site.hoursCount} — across {site.airportsCount} airports.
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 20, opacity: 0.8 }}>
-          <span>South Florida · {site.contact.address.region}</span>
+          <span>{site.contact.email}</span>
           <span>{site.url.replace(/^https?:\/\//, "")}</span>
         </div>
       </div>

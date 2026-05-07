@@ -6,7 +6,7 @@ import { photos } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `${site.name} is a Florida-based provider of global aviation fuel and trip support, founded in ${site.founded}.`,
+  description: `${site.name} is a global provider of aviation fuel and trip support, founded in ${site.founded}.`,
 };
 
 export default function AboutPage() {
@@ -15,7 +15,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="One team. Every airport. Every time zone."
-        description={`Founded in ${site.founded} in South Florida. Downstream marketing of aviation fuel to operators at ${site.airportsCount} airports worldwide.`}
+        description={`Founded in ${site.founded}. Downstream marketing of aviation fuel to operators at ${site.airportsCount} airports worldwide.`}
         photo={photos.jetHeadOn}
       />
 
