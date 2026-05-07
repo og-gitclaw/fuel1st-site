@@ -14,7 +14,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About"
-        title="Aviation fuel and trip support, handled by one team."
+        title="One team. Every airport. Every time zone."
         description={`Founded in ${site.founded} in South Florida. Downstream marketing of aviation fuel to operators at ${site.airportsCount} airports worldwide.`}
         photo={photos.jetHeadOn}
       />
