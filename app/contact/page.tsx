@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { site, formattedAddress } from "@/lib/site";
+import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
@@ -32,7 +32,9 @@ export default function ContactPage() {
               </a>
             </ContactItem>
             <ContactItem icon={MapPin} label="Address">
-              <span className="text-ink">{formattedAddress}</span>
+              <span className="text-ink">
+                {site.contact.address.street}, {site.contact.address.region} {site.contact.address.postal}
+              </span>
             </ContactItem>
             <ContactItem icon={Clock} label="Hours">
               <span className="text-ink">Dispatch staffed 24/7, 365 days a year</span>

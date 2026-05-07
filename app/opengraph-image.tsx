@@ -51,7 +51,7 @@ export default async function OpengraphImage() {
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 20, opacity: 0.8 }}>
-          <span>{site.contact.address.city}, {site.contact.address.region}</span>
+          <span>South Florida · {site.contact.address.region}</span>
           <span>{site.url.replace(/^https?:\/\//, "")}</span>
         </div>
       </div>

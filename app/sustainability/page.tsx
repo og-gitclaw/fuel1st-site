@@ -47,13 +47,10 @@ export default function SustainabilityPage() {
           </div>
           <div className="prose-fuel">
             <p>
-              The aviation industry&rsquo;s path to lower carbon runs through fuel choices. SAF — produced from feedstocks like used cooking oil, agricultural residues, and synthesized fuels — can reduce life-cycle emissions by a meaningful margin compared with conventional Jet A.
+              SAF reduces life-cycle CO₂ versus conventional Jet A. We treat it as a procurement program: a measurable share sourced as SAF or its book-and-claim equivalent, with certified offsets covering the rest where the operator chooses.
             </p>
             <p>
-              We treat sustainability as a procurement program: a measurable share of fuel sourced as SAF or its book-and-claim equivalent, with the rest covered by certified offsets where the operator chooses. Reporting is generated at the same cadence as your fueling activity so it doesn&rsquo;t become a year-end scramble.
-            </p>
-            <p>
-              Operators with formal sustainability commitments can configure a program with target percentages, registry preferences, and reporting formats aligned to their disclosures.
+              Reporting runs at the same cadence as your fueling activity — no year-end scramble. Configure target percentages, registry preferences, and formats aligned to your disclosures.
             </p>
           </div>
         </div>
@@ -62,7 +59,7 @@ export default function SustainabilityPage() {
       <section className="section">
         <div className="container-page text-center">
           <h2 className="mx-auto max-w-2xl text-balance">
-            Tell us about your sustainability targets — we&rsquo;ll show you what&rsquo;s achievable on your existing route.
+            Tell us your sustainability targets. We&rsquo;ll show you what&rsquo;s achievable on your route.
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link href="/contact" className="btn-primary">Get a SAF assessment</Link>

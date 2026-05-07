@@ -14,7 +14,7 @@ export type Service = {
   name: string;
   short: string;
   icon: LucideIcon;
-  body: string[];
+  body: string;
   highlights: string[];
 };
 
@@ -22,27 +22,21 @@ export const services: Service[] = [
   {
     slug: "fuel-supply",
     name: "Fuel Supply",
-    short: "Reliable jet fuel sourced from a global supplier network and delivered where you need it.",
+    short: "Reliable jet fuel sourced from a global supplier network.",
     icon: Fuel,
-    body: [
-      "Fuel1st sources Jet A and Jet A-1 directly from refiners and major distributors, then routes contracts and into-plane release through a single point of contact for your dispatch team.",
-      "Strong commercial relationships with the world's largest fuel producers translate into competitive ramp pricing for general aviation, commercial, and private operators.",
-    ],
+    body: "Jet A and Jet A-1 sourced directly from refiners and major distributors, with contract pricing routed through a single point of contact for your dispatch team.",
     highlights: [
       "Coverage at 1,800+ airports worldwide",
-      "Single contract, single invoice, single point of accountability",
-      "Volume-backed pricing through major-supplier agreements",
+      "Single contract, single invoice",
+      "Volume-backed pricing through major suppliers",
     ],
   },
   {
     slug: "trip-support",
     name: "Trip Support",
-    short: "Multilingual dispatch, permits, slots, and overflight coordination — handled around the clock.",
+    short: "Multilingual dispatch handling permits, slots, and overflights — 24/7.",
     icon: Plane,
-    body: [
-      "Our trip support desk is staffed by experienced dispatchers who handle the moving parts of an international mission: landing and overflight permits, slot requests, customs and immigration coordination, ground transport, and crew accommodation.",
-      "We coordinate with handlers and authorities in local time zones so the flight deck stays focused on the aircraft.",
-    ],
+    body: "Experienced dispatchers handle landing and overflight permits, slot requests, customs coordination, ground transport, and crew accommodation in every operational time zone.",
     highlights: [
       "Coverage in every operational time zone",
       "Permit, slot, and overflight handling",
@@ -52,12 +46,9 @@ export const services: Service[] = [
   {
     slug: "logistics",
     name: "Logistics",
-    short: "Into-plane fueling logistics for FBOs, bulk distribution, and complex multi-stop programs.",
+    short: "Into-plane fueling for FBOs, bulk distribution, and complex multi-stop programs.",
     icon: PackageOpen,
-    body: [
-      "Beyond ramp delivery, we run logistics programs for fixed-base operators and large fleet customers: scheduled bulk replenishment, into-plane release coordination, equipment leasing where it makes sense, and multi-stop programs that need to behave like one shipment.",
-      "If your operation has unusual constraints — temporary FBOs, remote stations, charter cycles — we'll design the lift around them.",
-    ],
+    body: "Beyond ramp delivery, we run logistics programs for fixed-base operators and large fleet customers — scheduled bulk replenishment, into-plane release coordination, and multi-stop programs that behave like one shipment.",
     highlights: [
       "FBO and bulk-distribution programs",
       "Multi-stop and complex routing",
@@ -67,14 +58,11 @@ export const services: Service[] = [
   {
     slug: "card-programs",
     name: "Card Programs",
-    short: "Prepaid fuel cards that simplify settlement across our partner network.",
+    short: "Prepaid fuel cards that simplify settlement across the network.",
     icon: CreditCard,
-    body: [
-      "Our card program lets crews settle fuel transactions at participating locations without setting up a contract for every stop. It folds into your monthly statement and removes the friction of one-off ramp purchases.",
-      "Cards are designed for operators with high stop counts and unpredictable routing.",
-    ],
+    body: "Crews settle fuel transactions at participating locations without a contract for every stop. Folds into one monthly statement, designed for high-stop-count operations.",
     highlights: [
-      "Settle at participating locations on a single statement",
+      "Settle at participating locations on one statement",
       "Designed for high-stop-count operations",
       "Consolidated monthly invoicing",
     ],
@@ -82,12 +70,9 @@ export const services: Service[] = [
   {
     slug: "flight-planning",
     name: "Flight Planning",
-    short: "Routes, weather, NOTAMs, and fuel planning — everything the dispatch release needs.",
+    short: "Routes, weather, NOTAMs, and fuel planning — all in your release format.",
     icon: Map,
-    body: [
-      "Our flight-planning team produces operational releases that account for current weather, en-route winds, alternates, and active NOTAMs. We work with the aircraft's performance data to optimize fuel loads and route choices.",
-      "Plans are delivered in the format your operations team already uses.",
-    ],
+    body: "Operational releases that account for current weather, en-route winds, alternates, and active NOTAMs — built around your aircraft&rsquo;s performance data and delivered in the format your operations team already uses.",
     highlights: [
       "Performance-based fuel optimization",
       "Active NOTAM and weather integration",
@@ -97,12 +82,9 @@ export const services: Service[] = [
   {
     slug: "ground-handling",
     name: "Ground Handling",
-    short: "Coordinated handling at destination FBOs so the turn happens without surprises.",
+    short: "Coordinated handling so the turn happens without surprises.",
     icon: Wrench,
-    body: [
-      "We pre-arrange ramp services, lavatory and water carts, GPU, catering, and ground transport with the FBO of record at each stop, then confirm with crew and handler before arrival.",
-      "If an FBO substitution becomes necessary mid-mission, our dispatch desk handles the swap in real time.",
-    ],
+    body: "Pre-arranged ramp services, GPU, catering, and ground transport at each stop — confirmed with crew and handler before arrival, with real-time FBO substitutions when needed.",
     highlights: [
       "Pre-coordinated ramp services and turn-around support",
       "FBO substitution handled in real time",
@@ -111,17 +93,14 @@ export const services: Service[] = [
   },
   {
     slug: "saf",
-    name: "Sustainable Aviation Fuel (SAF)",
-    short: "Lower-carbon fuel options and emissions reporting for operators with sustainability mandates.",
+    name: "Sustainable Aviation Fuel",
+    short: "Lower-carbon fuel options and emissions reporting that holds up.",
     icon: Leaf,
-    body: [
-      "Sustainable Aviation Fuel reduces life-cycle CO₂ emissions versus conventional jet fuel. We help operators source SAF where it is currently available and fold its use into their internal sustainability reporting.",
-      "For stops where physical SAF isn't yet available, we offer book-and-claim arrangements and carbon-offset programs as bridge options.",
-    ],
+    body: "Physical SAF where available, plus book-and-claim arrangements and certified offsets at stations without local supply. Reporting is suitable for corporate sustainability disclosure.",
     highlights: [
       "Physical SAF supply at participating airports",
       "Book-and-claim for stations without local supply",
-      "Documentation suitable for corporate sustainability reporting",
+      "Documentation suitable for sustainability reporting",
     ],
   },
 ];

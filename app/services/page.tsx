@@ -50,11 +50,7 @@ export default function ServicesPage() {
               <div>
                 <Icon className="h-10 w-10 text-brand" aria-hidden="true" />
                 <h2 className="mt-4 text-balance">{s.name}</h2>
-                <div className="prose-fuel mt-4">
-                  {s.body.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                </div>
+                <p className="prose-fuel mt-4">{s.body}</p>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-white p-8">
                 <p className="eyebrow">Highlights</p>

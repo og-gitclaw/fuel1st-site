@@ -6,7 +6,7 @@ import { photos } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Locations",
-  description: `${site.name}'s headquarters in Lauderdale by the Sea, Florida.`,
+  description: `${site.name}'s headquarters in South Florida.`,
 };
 
 export default function LocationsPage() {
@@ -15,7 +15,7 @@ export default function LocationsPage() {
       <PageHeader
         eyebrow="Locations"
         title="One office, global reach."
-        description={`Our headquarters in Lauderdale by the Sea coordinates fuel and trip support for operators flying to ${site.airportsCount} airports worldwide.`}
+        description={`Our South Florida headquarters coordinates fuel and trip support for operators flying to ${site.airportsCount} airports worldwide.`}
         photo={photos.runwayAerial}
       />
 
@@ -23,13 +23,12 @@ export default function LocationsPage() {
         <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="rounded-2xl border border-slate-200 bg-surface-cream p-8">
             <p className="eyebrow">Headquarters</p>
-            <h2 className="mt-2 text-balance">Lauderdale by the Sea, Florida</h2>
+            <h2 className="mt-2 text-balance">South Florida</h2>
             <div className="mt-6 space-y-2 text-ink-soft">
               <p>{site.contact.address.street}</p>
-              <p>
-                {site.contact.address.city}, {site.contact.address.region} {site.contact.address.postal}
-              </p>
+              <p>{site.contact.address.region} {site.contact.address.postal}</p>
               <p>{site.contact.address.countryName}</p>
+              <p className="pt-2 text-xs text-ink-muted">Full address listed in the site footer.</p>
             </div>
             <div className="mt-6 space-y-1 text-sm">
               <p>
