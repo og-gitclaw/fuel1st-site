@@ -7,7 +7,7 @@ import { CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Fuel supply, trip support, logistics, card programs, flight planning, ground handling, and Sustainable Aviation Fuel — coordinated by one Fuel1st team.",
+  description: "Fuel supply, trip support, logistics, flight planning, ground handling, and Sustainable Aviation Fuel — coordinated by one Fuel1st team.",
 };
 
 export default function ServicesPage() {

@@ -2,7 +2,6 @@ import {
   Fuel,
   Plane,
   PackageOpen,
-  CreditCard,
   Map,
   Wrench,
   Leaf,
@@ -53,18 +52,6 @@ export const services: Service[] = [
       "FBO and bulk-distribution programs",
       "Multi-stop and complex routing",
       "Equipment and lease support where applicable",
-    ],
-  },
-  {
-    slug: "card-programs",
-    name: "Card Programs",
-    short: "Prepaid fuel cards that simplify settlement across the network.",
-    icon: CreditCard,
-    body: "Crews settle fuel transactions at participating locations without a contract for every stop. Folds into one monthly statement, designed for high-stop-count operations.",
-    highlights: [
-      "Settle at participating locations on one statement",
-      "Designed for high-stop-count operations",
-      "Consolidated monthly invoicing",
     ],
   },
   {
