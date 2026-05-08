@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
+import { Reveal } from "@/components/Reveal";
 import { photos } from "@/lib/photos";
 import { Leaf, BarChart3, FileText } from "lucide-react";
 
@@ -21,21 +22,27 @@ export default function SustainabilityPage() {
 
       <section className="section">
         <div className="container-page grid gap-10 lg:grid-cols-3">
-          <Pillar
-            icon={Leaf}
-            title="Physical SAF"
-            body="Drop-in SAF supply at participating airports, integrated with your contract and invoice the same way as conventional jet fuel."
-          />
-          <Pillar
-            icon={BarChart3}
-            title="Book-and-claim"
-            body="When a station can&rsquo;t take physical SAF, book the environmental attribute through a certified registry and claim it against your operations."
-          />
-          <Pillar
-            icon={FileText}
-            title="Reporting"
-            body="Documentation suitable for corporate sustainability disclosure, scope-3 conversations with your auditor, and customer-facing emissions claims."
-          />
+          <Reveal delay={0} className="h-full">
+            <Pillar
+              icon={Leaf}
+              title="Physical SAF"
+              body="Drop-in SAF supply at participating airports, integrated with your contract and invoice the same way as conventional jet fuel."
+            />
+          </Reveal>
+          <Reveal delay={80} className="h-full">
+            <Pillar
+              icon={BarChart3}
+              title="Book-and-claim"
+              body="When a station can&rsquo;t take physical SAF, book the environmental attribute through a certified registry and claim it against your operations."
+            />
+          </Reveal>
+          <Reveal delay={160} className="h-full">
+            <Pillar
+              icon={FileText}
+              title="Reporting"
+              body="Documentation suitable for corporate sustainability disclosure, scope-3 conversations with your auditor, and customer-facing emissions claims."
+            />
+          </Reveal>
         </div>
       </section>
 

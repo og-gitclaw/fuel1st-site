@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { NEWS_CATEGORIES, type NewsCategory, type NewsItem } from "@/lib/rss";
 import { NewsCard } from "@/components/NewsCard";
+import { Reveal } from "@/components/Reveal";
 import { cn } from "@/lib/cn";
 
 const STORAGE_KEY = "fuel1st_news_filter";
@@ -54,8 +55,10 @@ export function NewsFilter({ items }: { items: NewsItem[] }) {
         </p>
       ) : (
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((it) => (
-            <NewsCard key={it.id} item={it} />
+          {filtered.map((it, idx) => (
+            <Reveal key={it.id} delay={Math.min(idx, 8) * 60} className="h-full">
+              <NewsCard item={it} />
+            </Reveal>
           ))}
         </div>
       )}

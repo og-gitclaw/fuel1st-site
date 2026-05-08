@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
+import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
 
@@ -32,15 +33,21 @@ export default function AboutPage() {
 
       <section className="section bg-surface-slate">
         <div className="container-page grid gap-8 lg:grid-cols-3">
-          <Card title="Our vision">
-            Operators focused on flying, not chasing FBOs and suppliers.
-          </Card>
-          <Card title="Our mission">
-            Be the single point of accountability for fuel and trip support, anywhere, around the clock.
-          </Card>
-          <Card title="How we work">
-            One contract. One invoice. One dispatch team. A culture that treats 02:00 the same as 14:00.
-          </Card>
+          <Reveal delay={0} className="h-full">
+            <Card title="Our vision">
+              Operators focused on flying, not chasing FBOs and suppliers.
+            </Card>
+          </Reveal>
+          <Reveal delay={80} className="h-full">
+            <Card title="Our mission">
+              Be the single point of accountability for fuel and trip support, anywhere, around the clock.
+            </Card>
+          </Reveal>
+          <Reveal delay={160} className="h-full">
+            <Card title="How we work">
+              One contract. One invoice. One dispatch team. A culture that treats 02:00 the same as 14:00.
+            </Card>
+          </Reveal>
         </div>
       </section>
 
@@ -50,15 +57,21 @@ export default function AboutPage() {
             <p className="eyebrow">Who we serve</p>
             <h2 className="mt-2 text-balance">Operators who don&rsquo;t fit one box.</h2>
             <div className="mt-8 grid gap-8 md:grid-cols-3">
-              <Segment title="Business aviation">
-                Charter, fractional, and corporate flight departments with unpredictable schedules.
-              </Segment>
-              <Segment title="Commercial airlines">
-                Scheduled carriers managing fuel and trip needs outside their primary network.
-              </Segment>
-              <Segment title="Government &amp; military">
-                Defense and government customers on contingency or scheduled missions.
-              </Segment>
+              <Reveal delay={0}>
+                <Segment title="Business aviation">
+                  Charter, fractional, and corporate flight departments with unpredictable schedules.
+                </Segment>
+              </Reveal>
+              <Reveal delay={80}>
+                <Segment title="Commercial airlines">
+                  Scheduled carriers managing fuel and trip needs outside their primary network.
+                </Segment>
+              </Reveal>
+              <Reveal delay={160}>
+                <Segment title="Government &amp; military">
+                  Defense and government customers on contingency or scheduled missions.
+                </Segment>
+              </Reveal>
             </div>
             <div className="mt-10">
               <Link href="/contact" className="btn-primary">Talk to us</Link>
