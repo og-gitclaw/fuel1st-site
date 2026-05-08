@@ -4,6 +4,7 @@ import { ArrowRight, Globe2, Clock, Plane, Leaf } from "lucide-react";
 import { services } from "@/lib/services";
 import { ServiceCard } from "@/components/ServiceCard";
 import { NewsCard } from "@/components/NewsCard";
+import { Reveal } from "@/components/Reveal";
 import { fetchAggregatedNews } from "@/lib/rss";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -102,12 +103,12 @@ function ValueStrip() {
     <section className="py-20">
       <div className="container-page">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {items.map(({ icon: Icon, title, body }) => (
-            <div key={title}>
+          {items.map(({ icon: Icon, title, body }, idx) => (
+            <Reveal key={title} delay={idx * 80}>
               <Icon className="h-7 w-7 text-brand" aria-hidden="true" />
               <h3 className="mt-3 text-base">{title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -165,8 +166,10 @@ function ServicesOverview() {
           </Link>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.slice(0, 6).map((s) => (
-            <ServiceCard key={s.slug} service={s} href={`/services#${s.slug}`} />
+          {services.slice(0, 6).map((s, idx) => (
+            <Reveal key={s.slug} delay={idx * 80} className="h-full">
+              <ServiceCard service={s} href={`/services#${s.slug}`} />
+            </Reveal>
           ))}
         </div>
       </div>
@@ -224,8 +227,10 @@ function NewsStrip({ items }: { items: Awaited<ReturnType<typeof fetchAggregated
           </p>
         ) : (
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {items.map((it) => (
-              <NewsCard key={it.id} item={it} compact />
+            {items.map((it, idx) => (
+              <Reveal key={it.id} delay={idx * 80} className="h-full">
+                <NewsCard item={it} compact />
+              </Reveal>
             ))}
           </div>
         )}
