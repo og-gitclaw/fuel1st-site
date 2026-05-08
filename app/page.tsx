@@ -5,6 +5,7 @@ import { services } from "@/lib/services";
 import { ServiceCard } from "@/components/ServiceCard";
 import { NewsCard } from "@/components/NewsCard";
 import { Reveal } from "@/components/Reveal";
+import { Ticker } from "@/components/Ticker";
 import { fetchAggregatedNews } from "@/lib/rss";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -84,10 +85,23 @@ function Hero() {
 }
 
 function Stat({ label, value }: { label: string; value: string }) {
+  // If the value starts with digits (with optional commas), animate the
+  // numeric portion via a ticker and append whatever suffix follows
+  // (e.g. "1,800+" -> ticker 1800, suffix "+").
+  const numericMatch = value.match(/^([\d,]+)(.*)$/);
   return (
     <div>
       <dt className="text-xs font-semibold uppercase tracking-wider text-white/55">{label}</dt>
-      <dd className="mt-1 text-2xl font-semibold text-white md:text-3xl">{value}</dd>
+      <dd className="mt-1 text-2xl font-semibold text-white md:text-3xl">
+        {numericMatch ? (
+          <Ticker
+            target={parseInt(numericMatch[1].replace(/,/g, ""), 10)}
+            format={(n) => `${n.toLocaleString()}${numericMatch[2]}`}
+          />
+        ) : (
+          value
+        )}
+      </dd>
     </div>
   );
 }
