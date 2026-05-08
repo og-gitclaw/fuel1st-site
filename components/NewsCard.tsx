@@ -15,7 +15,7 @@ export function NewsCard({ item, compact = false }: { item: NewsItem; compact?: 
       href={item.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-brand-200 hover:shadow-sm"
+      className="card-lift group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white hover:border-brand-200"
     >
       {!compact && item.image ? (
         <div className="relative aspect-[16/9] w-full bg-surface-slate">
