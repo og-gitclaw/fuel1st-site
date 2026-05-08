@@ -60,11 +60,28 @@
     transform: translateY(-4px);
     box-shadow: 0 14px 32px -12px rgba(96, 0, 205, 0.22);
   }
+
+  /* Effect 3 — tap-press squish. Brief scale-down on press for tactile feedback.
+     Fires on touch tap and desktop click-and-hold. Mostly noticeable on mobile. */
+  .btn:active,
+  .card-lift:active {
+    transform: scale(0.97);
+    transition-duration: 80ms;
+  }
+  .card-lift:hover:active {
+    /* Combined state: hovered AND pressed (desktop). Keep the lift, add the squish. */
+    transform: translateY(-4px) scale(0.97);
+    transition-duration: 80ms;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .card-lift {
       transition: border-color 150ms ease;
     }
-    .card-lift:hover {
+    .card-lift:hover,
+    .card-lift:active,
+    .card-lift:hover:active,
+    .btn:active {
       transform: none;
       box-shadow: none;
     }
