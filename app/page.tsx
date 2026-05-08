@@ -96,7 +96,7 @@ function Stat({ label, value }: { label: string; value: string }) {
         {numericMatch ? (
           <Ticker
             target={parseInt(numericMatch[1].replace(/,/g, ""), 10)}
-            format={(n) => `${n.toLocaleString()}${numericMatch[2]}`}
+            suffix={numericMatch[2]}
           />
         ) : (
           value
